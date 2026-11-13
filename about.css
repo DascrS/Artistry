@@ -1,0 +1,286 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #25232a;
+    background: #e0e0e0;
+}
+
+body {
+    min-width: 320px;
+    min-height: 100vh;
+    margin: 0;
+    background: #e0e0e0;
+}
+
+.navbar {
+    min-height: 88px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    background: #baafcd;
+}
+
+.logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    color: #25232a;
+    font-size: 19px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.logo-mark {
+    width: 34px;
+    height: 34px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: #e0e0e0;
+    font-family: Georgia, serif;
+    font-size: 20px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 64px;
+    margin-left: 28px;
+}
+
+nav a {
+    position: relative;
+    padding: 8px 0;
+    color: #34313a;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+nav a::after {
+    position: absolute;
+    right: 0;
+    bottom: 2px;
+    left: 0;
+    height: 2px;
+    background: currentColor;
+    content: "";
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 180ms ease;
+}
+
+nav a:hover::after,
+nav a:focus-visible::after {
+    transform: scaleX(1);
+}
+
+.about {
+    width: min(1200px, calc(100% - 52px));
+    min-height: calc(100vh - 150px);
+    margin: 0 auto;
+    padding: 40px 0 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 200px;
+}
+
+/* OBJECTIVE */
+.about-objective {
+    max-width: 450px;
+}
+
+.about-objective h1 {
+    margin: 0 0 16px;
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.about-objective p {
+    margin: 0;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #444;
+}
+
+/* GOAL AND ADVOCACY */
+.about-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+}
+
+/* TEXT CONTENT */
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.about-content h2 {
+    margin: 0;
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.about-content p {
+    margin: 0;
+    color: #444;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* IMAGES */
+.about-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.footer {
+    width: 100%;
+    min-height: 168px;
+    padding: 28px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    background: #777;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10px;
+}
+
+/* Branding */
+.footer-brand {
+    flex: 1;
+}
+
+.footer-brand h3 {
+    margin: 2px 0 31px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.footer-brand p {
+    margin: 0;
+}
+
+/* Navigation */
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(3, 145px);
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.footer-column a {
+    color: white;
+    text-decoration: none;
+    font-size: 10px;
+}
+
+.footer-column a:hover {
+    text-decoration: underline;
+}
+
+/* Social buttons */
+.socials {
+    margin-top: 35px;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.social-buttons a {
+    width: 40px;
+    height: 22px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #aaa;
+    border-radius: 4px;
+}
+
+.social-buttons svg {
+    width: 13px;
+    height: 13px;
+    fill: white;
+}
+
+.socials span {
+    display: block;
+    margin-top: 5px;
+    font-size: 9px;
+}
+
+@media (max-width: 700px) {
+    .navbar {
+        padding: 18px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 14px 20px;
+        margin-left: 0;
+    }
+
+    .about {
+        width: calc(100% - 36px);
+        min-height: auto;
+        padding: 40px 0;
+        gap: 45px;
+    }
+
+    .about-objective {
+        max-width: 100%;
+    }
+
+    .about-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .about-image {
+        height: 230px;
+    }
+
+    .footer {
+        padding: 24px 18px;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .footer-brand {
+        width: 100%;
+    }
+
+    .footer-brand h3 {
+        margin-bottom: 15px;
+    }
+
+    .footer-links {
+        width: 100%;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .socials {
+        margin-top: 20px;
+    }
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="theme-color" content="#f2f0e9" />
+        <title>Artistry | The Team</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="team.css" />
+        <link rel="stylesheet" href="site-chrome.css" />
+    </head>
+    <body>
+        <header class="site-header">
+            <a class="brand" href="index.html" aria-label="Artistry home">
+                <span class="brand-mark" aria-hidden="true">A</span>
+                <span class="brand-name">Artistry</span>
+            </a>
+
+            <nav class="primary-nav" id="primary-nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="team.html" aria-current="page">The Team</a>
+                <a href="Resources.html">Resources</a>
+                <a href="Contacts.html">Contacts</a>
+            </nav>
+            <button
+                class="menu-toggle"
+                type="button"
+                aria-label="Open navigation"
+                aria-controls="primary-nav"
+                aria-expanded="false"
+            >
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </header>
+        <button class="nav-backdrop" type="button" aria-label="Close navigation" hidden></button>
+
+        <main class="team-page">
+            <section class="team-section" aria-labelledby="team-title">
+                <h1 id="team-title">The Developers</h1>
+
+                <div class="developer-list">
+                    <article class="developer-card">
+                        <button
+                            class="developer-image"
+                            type="button"
+                            aria-label="Show placeholder for CHARLUIZ Aeron S. Ramos"
+                            aria-expanded="false"
+                        >
+                            <img
+                                src="images/DeveloperAeronRamos.png"
+                                alt="Portrait of CHARLUIZ Aeron S. Ramos"
+                            />
+                            <span class="developer-placeholder">Charluiz Aeron S. Ramos, Student of FEU Alabang and studies in BS Multimedia Arts 2026-2030, One of the lead developer who is also an Editor, Videographer and Cinematographer. </span>
+                        </button>
+                        <h2>CHARLUIZ Aeron S. Ramos</h2>
+                        <p>Lead developer that developed desktop, mobile and ipad for our About, Contacts, and Resources page.</p>
+                    </article>
+
+                    <article class="developer-card">
+                        <button
+                            class="developer-image"
+                            type="button"
+                            aria-label="Show placeholder for Jayfourth Patrick R. Santillan"
+                            aria-expanded="false"
+                        >
+                            <img
+                                src="images/DeveloperJayfourthSantillan.png"
+                                alt="Portrait of Jayfourth Patrick R. Santillan"
+                            />
+                            <span class="developer-placeholder">Jayfourth Patrick R. Santillan, Student of FEU Alabang and studies in BS Multimedia Arts 2026-2030, One of the Lead devlopers who is also a Creative illustrator and animator.</span>
+                        </button>
+                        <h2>Jayfourth Patrick R. Santillan</h2>
+                        <p>Lead developer that developed desktop, mobile and ipad for our home page and team section.</p>
+                    </article>
+                </div>
+            </section>
+        </main>
+
+        <footer class="site-footer">
+            <div class="footer-brand">
+                <a class="brand footer-brand-logo" href="index.html" aria-label="Artistry home">
+                    <span class="brand-mark footer-logo-mark" aria-hidden="true">A</span>
+                    <span class="brand-name footer-logo-name">Artistry</span>
+                </a>
+                <p>Support human artists and inspire creativity.</p>
+            </div>
+
+            <nav class="footer-nav" aria-label="Footer navigation">
+                <div class="footer-nav-group">
+                    <a href="index.html">Home</a>
+                    <a href="about.html">About</a>
+                </div>
+                <div class="footer-nav-group">
+                    <a href="team.html">The Team</a>
+                    <a href="Resources.html">Resources</a>
+                </div>
+                <div class="footer-nav-group footer-socials">
+                    <a href="Contacts.html">Contacts</a>
+                    <div class="social-links" aria-label="Socials">
+                        <a href="" aria-label="X">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M18.9 2H22l-6.8 7.8L23.2 22h-6.3L12 14.6 5.6 22H2.4l7.3-8.4L1.8 2h6.5l4.5 6.8L18.9 2Zm-1.1 18h1.7L7.3 3.9H5.5L17.8 20Z" />
+                            </svg>
+                        </a>
+                        <a href="" aria-label="Facebook">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <path d="M12 2a10 10 0 1 0 1.7 19.9v-7h2.4l.4-2.9h-2.8v-1.8c0-.9.3-1.5 1.5-1.5h1.5V6.1c-.3 0-1.2-.1-2.2-.1-2.2 0-3.7 1.3-3.7 3.8V12H8.4v2.9h2.4v7A10 10 0 0 0 12 2Z" />
+                            </svg>
+                        </a>
+                    </div>
+                    <span class="socials-label">Socials.</span>
+                </div>
+            </nav>
+        </footer>
+
+        <script>
+            document.querySelectorAll(".developer-image").forEach((imageButton) => {
+                imageButton.addEventListener("click", () => {
+                    const isRevealed = imageButton.getAttribute("aria-expanded") === "true";
+                    const developerName = imageButton.nextElementSibling.textContent;
+
+                    imageButton.setAttribute("aria-expanded", String(!isRevealed));
+                    imageButton.setAttribute(
+                        "aria-label",
+                        `${isRevealed ? "Show" : "Hide"} placeholder for ${developerName}`
+                    );
+                    imageButton.classList.toggle("is-revealed", !isRevealed);
+                });
+            });
+        </script>
+        <script src="navigation.js"></script>
+    </body>
+</html>
